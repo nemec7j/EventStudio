@@ -36,7 +36,7 @@ Event Studio is a Next.js MVP for collecting event data through a guided chat fl
 npm install
 ```
 
-2. Enter your API keys
+2. Fill values in `.env` (the file is already in the repository):
 
 ```env
 DATABASE_URL="file:./dev.db"
@@ -44,10 +44,11 @@ OPENAI_API_KEY="your-openai-api-key"
 OPENAI_MODEL="gpt-4o-mini"
 ```
 
+If you leave `OPENAI_API_KEY` empty, AI chat features will be unavailable.
+
 3. Apply database schema:
 
 ```bash
-npx prisma generate
 npx prisma migrate dev
 ```
 
