@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Events Knowledge Base",
+  title: "Event Studio",
   description: "Create and manage event content with a chat-driven workflow.",
 };
 

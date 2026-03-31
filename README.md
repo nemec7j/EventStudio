@@ -1,4 +1,4 @@
-# Event Studio MVP
+# Event Studio
 
 Event Studio is a Next.js MVP for collecting event data through a guided chat flow and generating marketing outputs from templates.
 

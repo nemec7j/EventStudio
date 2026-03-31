@@ -5,7 +5,7 @@ type Dictionary = Record<string, string>;
 const dictionaries: Record<LanguageCode, Dictionary> = {
   cs: {
     app_title: "Event Studio",
-    app_subtitle: "Events Knowledge Base",
+    app_subtitle: "Event Studio",
     nav_dashboard: "Dashboard",
     nav_templates: "Šablony",
     nav_language: "Jazyk",
@@ -95,7 +95,7 @@ const dictionaries: Record<LanguageCode, Dictionary> = {
     templates_header: "Templates Library",
     templates_title: "Šablony a generování marketingových materiálů",
     templates_subtitle:
-      "Nahraj šablonu, vyber událost z Knowledge Base a vygeneruj výstup.",
+      "Nahraj šablonu, vyber událost z Event Studia a vygeneruj výstup.",
     upload_title: "Nahrát šablonu",
     upload_description: "Podporujeme Markdown nebo HTML soubory s placeholdery.",
     upload_label: "Template Upload",
@@ -121,7 +121,7 @@ const dictionaries: Record<LanguageCode, Dictionary> = {
   },
   en: {
     app_title: "Event Studio",
-    app_subtitle: "Events Knowledge Base",
+    app_subtitle: "Event Studio",
     nav_dashboard: "Dashboard",
     nav_templates: "Templates",
     nav_language: "Language",
@@ -212,7 +212,7 @@ const dictionaries: Record<LanguageCode, Dictionary> = {
     templates_header: "Templates Library",
     templates_title: "Templates and marketing outputs",
     templates_subtitle:
-      "Upload a template, choose an event from the Knowledge Base, and generate output.",
+      "Upload a template, choose an event from Event Studio, and generate output.",
     upload_title: "Upload template",
     upload_description: "We support Markdown or HTML files with placeholders.",
     upload_label: "Template Upload",
