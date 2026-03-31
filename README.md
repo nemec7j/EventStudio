@@ -47,6 +47,7 @@ OPENAI_MODEL="gpt-4o-mini"
 3. Apply database schema:
 
 ```bash
+npx prisma generate
 npx prisma migrate dev
 ```
 
