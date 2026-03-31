@@ -1,0 +1,81 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "darwin-arm64", "windows"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Event {
+  id               String   @id @default(uuid())
+  title            String?
+  category         EventCategory?
+  status           EventStatus @default(DRAFT)
+  startDateTime    DateTime?
+  endDateTime      DateTime?
+  timezone         String?
+  locationName     String?
+  address          String?
+  city             String?
+  country          String?
+  descriptionShort String?
+  descriptionLong  String?
+  audience         String?
+  priceAmount      Float?
+  priceCurrency    String?
+  isFree           Boolean  @default(false)
+  registrationUrl  String?
+  organizerName    String?
+  organizerEmail   String?
+  tags             Json?
+  assets           Json?
+  translations     Json?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  generatedMaterials GeneratedMaterial[]
+}
+
+enum EventCategory {
+  CONFERENCE
+  PROMO
+  INTERNAL
+  OTHER
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model Template {
+  id                   String   @id @default(uuid())
+  name                 String
+  type                 TemplateType
+  originalFileUrl      String
+  detectedPlaceholders Json?
+  createdAt            DateTime @default(now())
+
+  generatedMaterials GeneratedMaterial[]
+}
+
+enum TemplateType {
+  MD
+  HTML
+}
+
+model GeneratedMaterial {
+  id            String   @id @default(uuid())
+  eventId       String
+  templateId    String
+  outputFileUrl String
+  createdAt     DateTime @default(now())
+
+  event    Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  template Template @relation(fields: [templateId], references: [id], onDelete: Cascade)
+
+  @@index([eventId])
+  @@index([templateId])
+}

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>We are looking forward to Santa Claus</title>
+
+    <style>
+      :root {
+        --bg: #f6f7f4;
+        --card: #ffffff;
+        --primary: #1f3a5f;
+        --accent: #c7a15a;
+        --text: #0f172a;
+        --muted: #64748b;
+        --border: #e5e7eb;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        color: var(--text);
+      }
+
+      /* Page */
+      .page {
+        max-width: 900px;
+        margin: 32px auto;
+        background: var(--card);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 30px 90px rgba(15,23,42,0.15);
+      }
+
+      /* Hero image */
+      .hero {
+        position: relative;
+        height: 420px;
+        background: #0f172a;
+      }
+
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(15,23,42,0.75),
+          rgba(15,23,42,0.15),
+          rgba(15,23,42,0)
+        );
+      }
+
+      .hero-content {
+        position: absolute;
+        left: 32px;
+        bottom: 32px;
+        z-index: 1;
+        color: #ffffff;
+        max-width: 80%;
+      }
+
+      .kicker {
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(255,255,255,.85);
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-size: 38px;
+        line-height: 1.1;
+        font-weight: 900;
+        margin: 0;
+      }
+
+      /* Content */
+      .content {
+        padding: 40px 48px 48px 48px;
+      }
+
+      .meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .meta-item {
+        padding: 16px 18px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: #fafafa;
+      }
+
+      .meta-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+
+      .meta-value {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .section-title {
+        font-size: 22px;
+        font-weight: 900;
+        margin: 32px 0 12px 0;
+        color: var(--primary);
+      }
+
+      .annotation {
+        padding: 20px 22px;
+        border-left: 4px solid var(--accent);
+        background: #fdfbf7;
+        border-radius: 12px;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .description {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #1f2937;
+        white-space: pre-wrap;
+      }
+
+      /* Footer */
+      .footer {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        font-size: 13px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      /* Print */
+      @media print {
+        body { background: #ffffff; }
+        .page {
+          margin: 0;
+          box-shadow: none;
+          border-radius: 0;
+        }
+        .hero {
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <article class="page">
+      <!-- HERO IMAGE -->
+      <header class="hero">
+        <!-- Placeholder na fotku hotelu / eventu -->
+        <img src="http://localhost:3000/api/files/assets/1770807095010-22x037-dbd386d6e31c51297ee771eb0be0ebbec041c0fd.jpeg" alt="Event or venue photo" />
+        <div class="hero-content">
+          <div class="kicker">Event Invitation</div>
+          <h1 class="title">We are looking forward to Santa Claus</h1>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <section class="content">
+        <!-- META INFO -->
+        <div class="meta">
+          <div class="meta-item">
+            <div class="meta-label">Venue</div>
+            <div class="meta-value">Horizont</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Start</div>
+            <div class="meta-value">23. 2. 2026 15:00</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">End</div>
+            <div class="meta-value">23. 2. 2026 20:00</div>
+          </div>
+        </div>
+
+        <!-- ANOTACE -->
+        <div class="section-title">Summary</div>
+        <div class="annotation">
+          Christmas adventure with Liška Eliška
+        </div>
+
+        <!-- POPIS -->
+        <div class="section-title">Description</div>
+        <div class="description">
+          The animation program Looking Forward to Santa Claus invites children into the world of pre-Christmas magic. They can look forward to creative activities full of imagination, winter games, searching for little surprises, and spending time together listening to fairy tales. The program playfully gets the whole family in the holiday spirit and brings lots of joy, anticipation, and wonderful OREA moments.
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+          We are looking forward to Santa Claus · Horizont<br />
+          This material was generated automatically from the Knowledge Base.
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
